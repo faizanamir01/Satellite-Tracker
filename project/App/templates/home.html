@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Satellites </title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2>Table 1: Satellite Names and Launch Countries</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Satellite Name</th>
+                <th>Launch Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in launch_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.country }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <h2>Table 2: Satellites data </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>OBJECT NAME</th>
+                <th>OBJECT ID</th>
+                <th>EPOCH</th>
+                <th>MEAN MOTION</th>
+                <th>ECCENTRICITY</th>
+                <th>INCLINATION</th>
+                <th>RA OF ASC NODE</th>
+                <th>ARG OF PERICENTER</th>
+                <th>MEAN ANOMALY</th>
+                <th>EPHEMERIS TYPE</th>
+                <th>CLASSIFICATION TYPE</th>
+                <th>NORAD CAT ID</th>
+                <th>ELEMENT SET NO</th>
+                <th>REV AT EPOCH</th>
+                <th>BSTAR</th>
+                <th>MEAN MOTION DOT</th>
+                <th>MEAN MOTION DDOT</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for satellite in satellite_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ satellite.OBJECT_NAME }}</td>
+                <td>{{ satellite.OBJECT_ID }}</td>
+                <td>{{ satellite.EPOCH }}</td>
+                <td>{{ satellite.MEAN_MOTION }}</td>
+                <td>{{ satellite.ECCENTRICITY }}</td>
+                <td>{{ satellite.INCLINATION }}</td>
+                <td>{{ satellite.RA_OF_ASC_NODE }}</td>
+                <td>{{ satellite.ARG_OF_PERICENTER }}</td>
+                <td>{{ satellite.MEAN_ANOMALY }}</td>
+                <td>{{ satellite.EPHEMERIS_TYPE }}</td>
+                <td>{{ satellite.CLASSIFICATION_TYPE }}</td>
+                <td>{{ satellite.NORAD_CAT_ID }}</td>
+                <td>{{ satellite.ELEMENT_SET_NO }}</td>
+                <td>{{ satellite.REV_AT_EPOCH }}</td>
+                <td>{{ satellite.BSTAR }}</td>
+                <td>{{ satellite.MEAN_MOTION_DOT }}</td>
+                <td>{{ satellite.MEAN_MOTION_DDOT }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</body>
+</html>
