@@ -10,7 +10,7 @@ The Satellite Tracker is a Django web application that allows users to track sat
 - Displays data for satellite launch countries in second table.
 
 
-## Installation
+## Installation and Usage
 
 1. Clone the repository to your local machine:
 
@@ -24,38 +24,22 @@ The Satellite Tracker is a Django web application that allows users to track sat
     cd project
     ```
 
-3. Install 'requests' using pip:
-
+3.Run the commands as listed in commands.txt file:
     ```
-    pip install requests
+    docker-compose build
+    docker-compose up
     ```
-
-4. Run migrations to create the necessary database tables:
-
+    OR Alternatively
+    Run the Django project using manage.py:
     ```
+    python manage.py makemigrations
     python manage.py migrate
-    ```
-
-5. Start the Django development server:
-
-    ```
     python manage.py runserver
     ```
 
-6. Access the application in your web browser at `http://localhost:8000`.
+4. Access the application in your web browser at `http://localhost:8000`.
 
-## Usage
 
-- Upon accessing the application, you will see a table displaying satellite data fetched from various sources.
-- Additionally, there is a second table showing dummy data for satellite launch countries.
 
-## Configuration
 
-- To modify the list of satellite names or add new sources for satellite data, update the `satellite_names` list and `satellite_urls` dictionary in the `views.py` file.
-- Customize the appearance of the tables or add additional features by modifying the HTML templates (`home.html`).
-
-## Dependencies
-
-- Django: The web framework used to build the application.
-- Requests: A Python library for making HTTP requests to fetch satellite data from external sources.
 
